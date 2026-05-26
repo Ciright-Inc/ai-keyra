@@ -6,6 +6,7 @@ import { SCENARIOS } from "@/lib/content";
 export function ScenariosSection() {
   return (
     <SectionShell
+      id="scenarios"
       eyebrow="Execution Scenarios"
       title="Real-world operational workflows"
       description="Deployable trust infrastructure for regulated autonomous operations across banking, healthcare, government, and telecom."
@@ -16,8 +17,9 @@ export function ScenariosSection() {
           <FadeIn key={scenario.sector} delay={i * 0.06}>
             <Card className="p-6 h-full">
               <p className="ds-caption-uppercase mb-2">{scenario.sector}</p>
-              <p className="ds-body-md mb-5">{scenario.requirement}</p>
-              <p className="ds-caption-uppercase mb-3">Required controls</p>
+              <p className="ds-body-md font-medium text-ds-body-strong mb-5">
+                {scenario.requirement}
+              </p>
               <ul className="space-y-2">
                 {scenario.controls.map((control) => (
                   <li key={control} className="ds-body-sm flex gap-2">

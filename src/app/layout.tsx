@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | Keyra AOTI",
   },
   description:
-    "Keyra Autonomous Operational Trust Infrastructure (AOTI) — rooted identity, operational authorization, runtime governance, trust federation, and execution verification for autonomous systems at enterprise, telecom, and sovereign scale.",
+    "ai.keyra.ie — Keyra Autonomous Operational Trust Infrastructure (AOTI). The trust layer for autonomous systems: rooted identity, operational authorization, runtime governance, trust federation, and execution verification at enterprise, telecom, and sovereign scale.",
   metadataBase: new URL(SITE.url),
   openGraph: {
     title: `${SITE.tagline} | Keyra AOTI`,

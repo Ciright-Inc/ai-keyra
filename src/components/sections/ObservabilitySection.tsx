@@ -6,6 +6,7 @@ import { OBSERVABILITY } from "@/lib/content";
 export function ObservabilitySection() {
   return (
     <SectionShell
+      id="observability"
       eyebrow="Observability & Telemetry"
       title="Carrier-grade infrastructure maturity"
       description="Enterprise-scale operational observability for trust events, execution analytics, and forensic accountability."

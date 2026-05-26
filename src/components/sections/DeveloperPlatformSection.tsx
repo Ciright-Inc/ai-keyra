@@ -9,7 +9,7 @@ export function DeveloperPlatformSection() {
       id="platform"
       eyebrow={DEVELOPER_PLATFORM.eyebrow}
       title={DEVELOPER_PLATFORM.title}
-      description="APIs, SDKs, CLI tooling, runtime simulation labs, and federation tooling — deployable operational trust infrastructure globally."
+      description="APIs, SDKs, CLI tooling, runtime simulation labs, trust testing environments, execution certification, federation tooling, observability APIs, orchestration APIs, policy engines, and deployment automation — deployable globally."
       band="dark"
     >
       <FadeIn>

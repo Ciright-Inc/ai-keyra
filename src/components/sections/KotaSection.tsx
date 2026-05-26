@@ -5,7 +5,8 @@ import { FadeIn } from "@/components/motion/FadeIn";
 import { Card } from "@/components/ui/Card";
 import { SectionShell } from "@/components/ui/SectionShell";
 import { KotaArchitectureDiagram } from "@/components/visual/KotaArchitectureDiagram";
-import { KOTA_PLANES } from "@/lib/content";
+import { KotaPlaneVisualization } from "@/components/visual/KotaPlaneVisualization";
+import { KOTA_DOCTRINE, KOTA_PLANES } from "@/lib/content";
 import { cn } from "@/components/ui/cn";
 
 export function KotaSection() {
@@ -15,11 +16,15 @@ export function KotaSection() {
   return (
     <SectionShell
       id="kota"
-      eyebrow="KOTA"
-      title="Keyra Operational Trust Architecture"
-      description="Eight infrastructure planes forming the formal architectural doctrine for autonomous operational trust."
+      eyebrow={KOTA_DOCTRINE.eyebrow}
+      title={KOTA_DOCTRINE.title}
+      description={KOTA_DOCTRINE.description}
       band="soft"
     >
+      <FadeIn className="mb-10 max-w-3xl">
+        <p className="ds-body-md">{KOTA_DOCTRINE.summary}</p>
+      </FadeIn>
+
       <div className="grid gap-6 lg:grid-cols-[240px_1fr_280px]">
         <FadeIn className="flex flex-row lg:flex-col gap-2 overflow-x-auto pb-2 lg:pb-0">
           {KOTA_PLANES.map((plane) => (
@@ -41,9 +46,14 @@ export function KotaSection() {
 
         <FadeIn delay={0.06} key={selected.id}>
           <Card className="p-6 md:p-8">
-            <p className="ds-caption-uppercase mb-2">Infrastructure plane</p>
-            <h3 className="ds-display-lg mb-3">{selected.name}</h3>
-            <p className="ds-body-md mb-8">{selected.description}</p>
+            <div className="grid gap-6 md:grid-cols-[140px_1fr] mb-6">
+              <KotaPlaneVisualization plane={selected} />
+              <div>
+                <p className="ds-caption-uppercase mb-2">Infrastructure plane</p>
+                <h3 className="ds-display-lg mb-3">{selected.name}</h3>
+                <p className="ds-body-md">{selected.description}</p>
+              </div>
+            </div>
             <p className="ds-caption-uppercase mb-4">Functions</p>
             <ul className="grid sm:grid-cols-2 gap-2">
               {selected.functions.map((fn) => (

@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/Card";
 import { SectionShell } from "@/components/ui/SectionShell";
 import {
   INSTITUTIONAL_CREDENTIALS,
+  WHITE_PAPER_ARCHIVE_TOPICS,
   WHITE_PAPERS,
   type WhitePaper,
 } from "@/lib/content";
@@ -34,10 +35,20 @@ export function WhitePapersLibrary() {
     <SectionShell
       id="research"
       eyebrow="White Papers Library"
-      title="Institutional research archive"
-      description="Operational governance frameworks, trust federation research, telecom-rooted identity systems, runtime authorization models, execution verification doctrine, and sovereign trust architecture."
+      title="Institutional research archive for Autonomous Operational Trust Infrastructure"
+      description="Bell Labs–grade operational doctrine — governance frameworks, federation research, telecom-rooted identity, runtime authorization, execution verification, and sovereign trust architecture."
       band="light"
     >
+      <FadeIn className="mb-8">
+        <p className="ds-caption-uppercase mb-3">Archive coverage</p>
+        <div className="flex flex-wrap gap-2">
+          {WHITE_PAPER_ARCHIVE_TOPICS.map((topic) => (
+            <span key={topic} className="ds-standard-chip">
+              {topic}
+            </span>
+          ))}
+        </div>
+      </FadeIn>
       <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
         <FadeIn>
           <div className="space-y-2">

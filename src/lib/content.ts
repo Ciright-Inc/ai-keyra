@@ -5,17 +5,169 @@ export const SITE = {
   tagline: "The Trust Layer For Autonomous Systems",
   category: "Autonomous Operational Trust Infrastructure",
   architecture: "Keyra Operational Trust Architecture",
+  platformTitle: "Keyra Autonomous Operational Trust Infrastructure (AOTI) Platform",
+  platformSubtitle: "The Trust Layer For Autonomous Systems",
 } as const;
 
+/** Full section index — mobile nav and in-page anchors */
 export const NAV_LINKS = [
+  { label: "Mission", href: "#mission" },
   { label: "Narrative", href: "#narrative" },
+  { label: "Crisis", href: "#crisis" },
+  { label: "AOTI", href: "#aoti" },
+  { label: "KOTA", href: "#kota" },
+  { label: "Trust", href: "#trust-viz" },
+  { label: "Protocols", href: "#protocols" },
+  { label: "Standards", href: "#standards" },
+  { label: "Security", href: "#security" },
+  { label: "Lifecycle", href: "#lifecycle" },
+  { label: "Deployment", href: "#deployment" },
+  { label: "OTCC", href: "#otcc" },
+  { label: "Telemetry", href: "#observability" },
+  { label: "Scenarios", href: "#scenarios" },
+  { label: "Global", href: "#global-map" },
+  { label: "Research", href: "#research" },
+  { label: "Platform", href: "#platform" },
+  { label: "Commercial", href: "#commercial" },
+] as const;
+
+/** Condensed desktop header */
+export const NAV_LINKS_PRIMARY = [
+  { label: "AOTI", href: "#aoti" },
   { label: "KOTA", href: "#kota" },
   { label: "Protocols", href: "#protocols" },
   { label: "Security", href: "#security" },
   { label: "Deployment", href: "#deployment" },
   { label: "OTCC", href: "#otcc" },
-  { label: "Platform", href: "#platform" },
   { label: "Research", href: "#research" },
+  { label: "Platform", href: "#platform" },
+] as const;
+
+export const PLATFORM_MISSION = {
+  eyebrow: "ai.keyra.ie",
+  title: SITE.platformTitle,
+  subtitle: SITE.platformSubtitle,
+  description:
+    "The official strategic, architectural, operational trust, and governance domain for Keyra — foundational infrastructure for secure autonomous systems at enterprise, telecom, and sovereign scale.",
+  frameworks: [
+    "Authenticated autonomous systems",
+    "Operational trust architecture",
+    "Machine identity infrastructure",
+    "Governed execution systems",
+    "Sovereign authorization frameworks",
+    "Telecom-rooted trust federation",
+    "Enterprise autonomous operations",
+  ],
+  keyraRole: "Keyra becomes the foundational AOTI platform.",
+} as const;
+
+export const CATEGORY_DEFINITION = {
+  eyebrow: "Core Category Positioning",
+  title: "Keyra formally defines a new infrastructure category",
+  body: "Autonomous Operational Trust Infrastructure (AOTI) is neutral operational trust infrastructure — deployable global architecture for enterprise-grade operational governance, telecom-rooted trust federation, and sovereign execution infrastructure.",
+} as const;
+
+export const AOTI_CAPABILITIES = [
+  "Rooted machine identity",
+  "Operational authorization",
+  "Runtime governance",
+  "Execution verification",
+  "Trust federation",
+  "Sovereign compliance",
+  "Telecom-rooted authentication",
+  "Auditability for autonomous operations",
+] as const;
+
+export const KOTA_DOCTRINE = {
+  eyebrow: "KOTA",
+  title: "Keyra Operational Trust Architecture",
+  description:
+    "The formal architectural doctrine of the platform. Eight infrastructure planes — each with world-class visualization, defined functions, and protocol federation interfaces.",
+  summary:
+    "KOTA organizes autonomous operational trust into identity, authorization, governance, execution, federation, audit, orchestration, and telecom trust — federating through the operational trust protocol stack.",
+} as const;
+
+export const TRUST_VISUALIZATION = {
+  eyebrow: "Operational Trust Visualization",
+  title: "Invisible trust, rendered with institutional precision",
+  description:
+    "Atmospheric signal choreography for SIM/eSIM rooted identity, carrier authentication, cryptographic orchestration, and federation pathways — beautiful infrastructure, not engineering diagrams.",
+  signals: [
+    { id: "sim", label: "SIM / eSIM / eUICC rooted identity", tier: "hardware" },
+    { id: "carrier", label: "Carrier authentication pathways", tier: "telecom" },
+    { id: "crypto", label: "Cryptographic orchestration flows", tier: "execution" },
+    { id: "federation", label: "Trust federation synchronization", tier: "federation" },
+    { id: "policy", label: "Policy orchestration boundaries", tier: "governance" },
+    { id: "attestation", label: "Execution attestation pulses", tier: "verification" },
+  ],
+} as const;
+
+export const STANDARDS_CREDIBILITY = [
+  "Regulator-ready",
+  "Telecom-grade",
+  "Enterprise deployable",
+  "Globally interoperable",
+  "Standards-aligned",
+  "Sovereign-cloud ready",
+] as const;
+
+export const SECURITY_ARCHITECTURE = {
+  eyebrow: "Security Doctrine",
+  title: "State-grade security architecture",
+  description:
+    "Explicit operational security doctrine for governed autonomous execution — Zero Trust by design, hardware-rooted trust, and policy-bound execution at every operational boundary.",
+  layers: [
+    {
+      layer: "Execution perimeter",
+      detail: "Zero Trust execution with least-privilege orchestration and execution revocation.",
+    },
+    {
+      layer: "Trust anchoring",
+      detail: "Hardware-rooted trust, secure enclave execution, and cryptographic attestation.",
+    },
+    {
+      layer: "Runtime assurance",
+      detail: "Runtime verification, trust isolation boundaries, and policy-bound execution.",
+    },
+    {
+      layer: "Credential resilience",
+      detail: "Credential rotation, post-quantum readiness, and sovereign compliance controls.",
+    },
+  ],
+} as const;
+
+export const LIFECYCLE_UNIVERSAL_CONTROLS = [
+  "Governance controls",
+  "Operational telemetry",
+  "Auditability",
+  "Policy orchestration",
+  "Execution traceability",
+] as const;
+
+export const FINAL_OUTCOME = {
+  principles: [
+    "Operational trust",
+    "Rooted identity",
+    "Governed execution",
+    "Runtime verification",
+    "Sovereign interoperability",
+    "Telecom-grade federation",
+    "Enterprise deployability",
+    "Standards-ready architecture",
+    "Infrastructure permanence",
+  ],
+  emotional: "Calm institutional certainty.",
+} as const;
+
+export const WHITE_PAPER_ARCHIVE_TOPICS = [
+  "Operational governance frameworks",
+  "Trust federation research",
+  "Telecom-rooted identity systems",
+  "Runtime authorization models",
+  "Execution verification doctrine",
+  "Sovereign trust architecture",
+  "Machine identity frameworks",
+  "Operational interoperability papers",
 ] as const;
 
 export const PRIMARY_NARRATIVE = {
@@ -87,6 +239,22 @@ export const CRISIS = {
     "Regulatory enforcement gaps",
     "Sovereign infrastructure exposure",
   ],
+} as const;
+
+export const AOTI_NOT = [
+  "An AI startup website",
+  "A chatbot platform",
+  "An LLM product",
+  "An AI marketplace",
+  "A consumer AI application",
+  "An “AI tools” company",
+] as const;
+
+export const AOTI_THESIS = {
+  requirement:
+    "Autonomous systems require verifiable operational trust, governed execution, and rooted identity infrastructure.",
+  provision:
+    "Keyra provides the operational trust architecture required for secure autonomous systems at enterprise, telecom, and sovereign scale.",
 } as const;
 
 export const AOTI = {
@@ -375,109 +543,60 @@ export const SECURITY_DOCTRINE = [
 
 export type LifecyclePhase = {
   phase: string;
-  controls: readonly string[];
+  focus: string;
+  controls: typeof LIFECYCLE_UNIVERSAL_CONTROLS;
 };
 
 export const TRUST_LIFECYCLE: readonly LifecyclePhase[] = [
   {
     phase: "Provisioning",
-    controls: [
-      "Governance controls",
-      "Operational telemetry",
-      "Auditability",
-      "Policy orchestration",
-      "Execution traceability",
-    ],
+    focus: "Identity issuance and trust anchor establishment for operational systems.",
+    controls: LIFECYCLE_UNIVERSAL_CONTROLS,
   },
   {
     phase: "Verification",
-    controls: [
-      "Identity attestation",
-      "Credential validation",
-      "Trust anchor verification",
-      "Runtime telemetry",
-      "Audit chain initiation",
-    ],
+    focus: "Credential validation and hardware-rooted trust anchor verification.",
+    controls: LIFECYCLE_UNIVERSAL_CONTROLS,
   },
   {
     phase: "Authorization",
-    controls: [
-      "Policy-bound permissions",
-      "Delegated authority chains",
-      "Least-privilege enforcement",
-      "Authorization telemetry",
-      "Execution boundaries",
-    ],
+    focus: "Policy-bound permissions and delegated execution authority.",
+    controls: LIFECYCLE_UNIVERSAL_CONTROLS,
   },
   {
     phase: "Trust Elevation",
-    controls: [
-      "Escalation governance",
-      "Human approval routing",
-      "Contextual trust scoring",
-      "Operational jurisdiction",
-      "Audit elevation records",
-    ],
+    focus: "Escalation governance and human approval routing under jurisdiction.",
+    controls: LIFECYCLE_UNIVERSAL_CONTROLS,
   },
   {
     phase: "Runtime Governance",
-    controls: [
-      "Policy orchestration",
-      "Execution constraints",
-      "Compliance validation",
-      "Runtime observability",
-      "Trust event monitoring",
-    ],
+    focus: "Continuous policy orchestration and compliance validation at runtime.",
+    controls: LIFECYCLE_UNIVERSAL_CONTROLS,
   },
   {
     phase: "Attestation",
-    controls: [
-      "Execution signing",
-      "Cryptographic proof",
-      "Trusted pathways",
-      "Immutable records",
-      "Forensic traceability",
-    ],
+    focus: "Execution signing and cryptographically verifiable operational proof.",
+    controls: LIFECYCLE_UNIVERSAL_CONTROLS,
   },
   {
     phase: "Federation",
-    controls: [
-      "Cross-network trust exchange",
-      "Roaming verification",
-      "Sovereign interoperability",
-      "Trust synchronization",
-      "Federation telemetry",
-    ],
+    focus: "Cross-network trust exchange and roaming verification at scale.",
+    controls: LIFECYCLE_UNIVERSAL_CONTROLS,
   },
   {
     phase: "Suspension",
-    controls: [
-      "Operational halt controls",
-      "Policy suspension",
-      "Trust degradation",
-      "Escalation routing",
-      "Audit suspension records",
-    ],
+    focus: "Operational halt controls and governed trust degradation.",
+    controls: LIFECYCLE_UNIVERSAL_CONTROLS,
   },
   {
     phase: "Revocation",
-    controls: [
-      "Credential revocation",
-      "Execution termination",
-      "Trust withdrawal",
-      "Forensic preservation",
-      "Compliance notification",
-    ],
+    focus: "Credential revocation, execution termination, and forensic preservation.",
+    controls: LIFECYCLE_UNIVERSAL_CONTROLS,
   },
   {
     phase: "Retirement",
-    controls: [
-      "Identity decommissioning",
-      "Archive governance",
-      "Audit finalization",
-      "Policy sunset",
-      "Trust record preservation",
-    ],
+    focus: "Identity decommissioning, audit finalization, and trust record preservation.",
+    controls: LIFECYCLE_UNIVERSAL_CONTROLS,
   },
 ] as const;
 
@@ -567,7 +686,7 @@ export const SCENARIOS: readonly Scenario[] = [
   {
     sector: "Banking",
     requirement:
-      "Autonomous treasury systems may not finalize regulated financial operations without verified operational trust.",
+      "Autonomous treasury systems may not finalize regulated financial operations without:",
     controls: [
       "Rooted identity validation",
       "Delegated authorization",
@@ -580,7 +699,7 @@ export const SCENARIOS: readonly Scenario[] = [
   {
     sector: "Healthcare",
     requirement:
-      "Operational healthcare systems may not execute regulated medical workflows without governed trust infrastructure.",
+      "Operational healthcare systems may not execute regulated medical workflows without:",
     controls: [
       "Physician authorization",
       "Sovereign compliance validation",
@@ -591,7 +710,7 @@ export const SCENARIOS: readonly Scenario[] = [
   {
     sector: "Government",
     requirement:
-      "Operational government systems may not execute state workflows without sovereign trust enforcement.",
+      "Operational government systems may not execute state workflows without:",
     controls: [
       "Sovereign trust enforcement",
       "Regional governance validation",
@@ -601,8 +720,7 @@ export const SCENARIOS: readonly Scenario[] = [
   },
   {
     sector: "Telecom",
-    requirement:
-      "Telecom operational systems require carrier-grade trust federation and SIM-rooted identity.",
+    requirement: "Telecom operational systems require:",
     controls: [
       "SIM-rooted trust",
       "Carrier federation",
@@ -821,5 +939,8 @@ export const COMMERCIAL_MODEL = [
 export const FINAL_STATEMENT = {
   headline: "Operational Trust Infrastructure For Secure Autonomous Operations",
   body: "Autonomous systems require operational trust infrastructure to operate securely at scale. Keyra provides the foundational Autonomous Operational Trust Infrastructure required for secure autonomous operations globally.",
+  closing:
+    "Autonomous systems require verifiable operational trust, governed execution, and rooted identity infrastructure. Keyra provides the operational trust architecture required for secure autonomous systems at enterprise, telecom, and sovereign scale.",
   cta: { label: "Contact Enterprise", href: "https://keyra.ie/contact" },
+  secondaryCta: { label: "Explore KOTA", href: "#kota" },
 } as const;

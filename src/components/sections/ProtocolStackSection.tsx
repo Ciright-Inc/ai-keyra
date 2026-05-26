@@ -10,7 +10,7 @@ export function ProtocolStackSection() {
       id="protocols"
       eyebrow="Protocol Architecture"
       title="Operational trust protocols"
-      description="Formal protocol-level legitimacy for identity, authorization, trust exchange, execution verification, and telecom federation."
+      description="Formal operational trust protocols establishing protocol-level legitimacy — identity, authorization, trust exchange, execution verification, sovereign federation, and telecom interoperability."
       band="light"
     >
       <FadeIn className="mb-10">

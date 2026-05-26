@@ -6,7 +6,7 @@ import { HeroInfrastructureBackdrop } from "@/components/visual/HeroInfrastructu
 import { FadeIn } from "@/components/motion/FadeIn";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
-import { HERO, HERO_LAYERS } from "@/lib/content";
+import { HERO, HERO_LAYERS, SITE } from "@/lib/content";
 import { useHydratedReducedMotion, useMounted } from "@/lib/useMounted";
 
 export function HeroSection() {
@@ -32,6 +32,7 @@ export function HeroSection() {
       <div className="ds-shell relative z-10 w-full py-16 md:py-24">
         <div className="max-w-4xl">
           <FadeIn>
+            <p className="ds-caption-uppercase mb-1">{SITE.domain}</p>
             <p className="ds-caption-uppercase mb-2">{HERO.eyebrow}</p>
           </FadeIn>
 

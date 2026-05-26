@@ -6,6 +6,7 @@ import { COMMERCIAL_MODEL } from "@/lib/content";
 export function CommercialModelSection() {
   return (
     <SectionShell
+      id="commercial"
       eyebrow="Commercial Infrastructure Model"
       title="Scalable infrastructure economics"
       description="Trust-as-a-Service and metered operational infrastructure — designed for enterprise, telecom, and sovereign deployment at scale."
@@ -14,7 +15,7 @@ export function CommercialModelSection() {
       <div className="grid gap-4 md:grid-cols-2">
         {COMMERCIAL_MODEL.map((item, i) => (
           <FadeIn key={item.model} delay={i * 0.04}>
-            <Card className="p-5">
+            <Card className="p-5 h-full">
               <h3 className="ds-title-md mb-1">{item.model}</h3>
               <p className="ds-body-sm">{item.detail}</p>
             </Card>

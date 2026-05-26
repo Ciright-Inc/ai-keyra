@@ -5,7 +5,7 @@ import { useMemo } from "react";
 import { KeyraAppLauncher } from "./KeyraAppLauncher";
 import { MobileNav } from "./MobileNav";
 import { KeyraLogo } from "@/components/brand/KeyraLogo";
-import { NAV_LINKS } from "@/lib/content";
+import { NAV_LINKS_PRIMARY } from "@/lib/content";
 import { keyraDeveloperPortalUrl } from "@/lib/keyraAppUrls";
 import { NEW_TAB_LINK } from "@/lib/newTabLink";
 
@@ -13,7 +13,7 @@ type NavItem = { href: string; label: string; external?: boolean };
 
 function buildNav(): NavItem[] {
   return [
-    ...NAV_LINKS.map((link) => ({ href: link.href, label: link.label })),
+    ...NAV_LINKS_PRIMARY.map((link) => ({ href: link.href, label: link.label })),
     { href: keyraDeveloperPortalUrl(), label: "Developers", external: true },
   ];
 }

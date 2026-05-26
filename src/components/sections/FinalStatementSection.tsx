@@ -1,6 +1,6 @@
 import { FadeIn } from "@/components/motion/FadeIn";
 import { Button } from "@/components/ui/Button";
-import { FINAL_STATEMENT } from "@/lib/content";
+import { FINAL_OUTCOME, FINAL_STATEMENT } from "@/lib/content";
 
 export function FinalStatementSection() {
   return (
@@ -11,10 +11,28 @@ export function FinalStatementSection() {
           <h2 id="final-statement" className="ds-display-xl mb-5">
             {FINAL_STATEMENT.headline}
           </h2>
-          <p className="ds-body-md mx-auto mb-8">{FINAL_STATEMENT.body}</p>
-          <Button href={FINAL_STATEMENT.cta.href} variant="primary" external>
-            {FINAL_STATEMENT.cta.label}
-          </Button>
+          <p className="ds-body-md mx-auto mb-6">{FINAL_STATEMENT.body}</p>
+          <p className="ds-body-md mx-auto mb-8 max-w-2xl border-t border-ds-hairline-strong pt-6">
+            {FINAL_STATEMENT.closing}
+          </p>
+
+          <p className="ds-caption-uppercase mb-4">{FINAL_OUTCOME.emotional}</p>
+          <ul className="flex flex-wrap justify-center gap-2 mb-10 max-w-2xl mx-auto">
+            {FINAL_OUTCOME.principles.map((principle) => (
+              <li key={principle} className="ds-standard-chip text-xs">
+                {principle}
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button href={FINAL_STATEMENT.cta.href} variant="primary" external>
+              {FINAL_STATEMENT.cta.label}
+            </Button>
+            <Button href={FINAL_STATEMENT.secondaryCta.href} variant="secondary">
+              {FINAL_STATEMENT.secondaryCta.label}
+            </Button>
+          </div>
         </FadeIn>
       </div>
     </section>

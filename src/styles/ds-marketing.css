@@ -1,0 +1,239 @@
+/**
+ * Public marketing surface — agent.md Part 1
+ * Scoped to body.ds-site so dashboard rules never leak in.
+ */
+
+body.ds-site {
+  min-height: 100dvh;
+  font-family: var(--ds-font-sans);
+  background: var(--ds-canvas);
+  color: var(--ds-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+html.ds-site-root {
+  scroll-padding-top: calc(var(--keyra-header-offset, 4rem) + 0.5rem);
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.ds-site-root {
+    scroll-behavior: auto;
+  }
+}
+
+/* Layout shell — §1.1 */
+.ds-shell {
+  width: 100%;
+  max-width: 75rem; /* 1200px */
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 4vw, 3rem);
+}
+
+.ds-section {
+  padding-block: 6rem; /* 96px */
+}
+
+@media (max-width: 768px) {
+  .ds-section {
+    padding-block: 4rem; /* 64px */
+  }
+}
+
+/* Section bands */
+.ds-band-light {
+  background: var(--ds-canvas);
+}
+
+.ds-band-soft {
+  background: var(--ds-canvas-soft);
+}
+
+.ds-band-dark {
+  background: var(--ds-surface-dark);
+  color: var(--ds-on-dark);
+}
+
+.ds-band-dark .ds-display-xl,
+.ds-band-dark .ds-display-lg,
+.ds-band-dark .ds-display-md,
+.ds-band-dark .ds-title-md {
+  color: var(--ds-on-dark);
+}
+
+.ds-band-dark .ds-caption-uppercase {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.ds-band-dark .ds-body-md,
+.ds-band-dark .ds-body-sm {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Hero — solid fills only (§0.3 no gradients) */
+.ds-hero {
+  position: relative;
+  min-height: min(92vh, 920px);
+  display: flex;
+  align-items: center;
+  padding-top: var(--keyra-header-offset, 4rem);
+  overflow: hidden;
+  background: var(--ds-canvas);
+  isolation: isolate;
+}
+
+.ds-hero-subline {
+  display: block;
+  min-height: 1.4em;
+  font: 500 clamp(1rem, 1.5vw, 1.25rem) / 1.5 var(--ds-font-sans);
+  color: var(--ds-body);
+}
+
+/* Marketing card alias */
+.ds-marketing-card {
+  background: var(--ds-surface-card);
+  border: 1px solid var(--ds-hairline-strong);
+  border-radius: var(--ds-radius-lg);
+  transition: box-shadow 0.2s ease;
+}
+
+.ds-marketing-card:hover {
+  box-shadow: var(--ds-shadow-soft);
+}
+
+.ds-marketing-card--dark {
+  background: var(--ds-surface-dark);
+  border: none;
+  color: var(--ds-on-dark);
+}
+
+.ds-marketing-card--dark .ds-body-sm,
+.ds-marketing-card--dark p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+/* Protocol badge — chip on strong surface */
+.ds-protocol-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  padding: 0.35rem 0.65rem;
+  font: 600 0.8125rem / 1 var(--ds-font-accent);
+  letter-spacing: 0.04em;
+  color: var(--ds-ink);
+  background: var(--ds-surface-strong);
+  border: 1px solid var(--ds-hairline-strong);
+  border-radius: var(--ds-radius-sm);
+}
+
+.ds-band-dark .ds-protocol-badge {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--ds-on-dark);
+}
+
+/* Standard chip — pill on hairline border */
+.ds-standard-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.875rem;
+  font: 500 0.8125rem / 1.2 var(--ds-font-sans);
+  color: var(--ds-ink);
+  background: var(--ds-surface-card);
+  border: 1px solid var(--ds-hairline-strong);
+  border-radius: var(--ds-radius-pill);
+  white-space: nowrap;
+}
+
+.ds-band-dark .ds-standard-chip {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--ds-on-dark);
+}
+
+/* Lifecycle timeline */
+.ds-lifecycle-track {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--ds-hairline-strong);
+}
+
+.ds-lifecycle-track::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 0.5rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ds-ink);
+}
+
+/* Skip link */
+.ds-skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 500;
+  padding: 0.75rem 1rem;
+  background: var(--ds-primary);
+  color: var(--ds-on-primary);
+}
+
+.ds-skip:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Stat tile in hero */
+.ds-stat-tile {
+  padding: 0.75rem 1rem;
+}
+
+.ds-stat-tile__value {
+  font: 600 1.5rem / 1.2 var(--ds-font-accent);
+  color: var(--ds-ink);
+}
+
+.ds-stat-tile__label {
+  font: 400 0.75rem / 1.4 var(--ds-font-sans);
+  color: var(--ds-muted);
+  margin-top: 0.25rem;
+}
+
+/* Grid helpers */
+.ds-card-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .ds-card-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .ds-card-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .ds-card-grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Topology / map use token-based strokes */
+.ds-stroke-muted {
+  stroke: var(--ds-hairline-strong);
+}
+
+.ds-fill-muted {
+  fill: var(--ds-surface-strong);
+}
+
+@keyframes ds-load {
+  0%, 100% { transform: translateX(-100%); }
+  50% { transform: translateX(200%); }
+}

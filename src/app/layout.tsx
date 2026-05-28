@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { KeyraSessionProvider } from "@/contexts/KeyraSessionContext";
 import { KEYRA_FAVICON_SRC } from "@/lib/keyraBrandAssets";
 import { SITE } from "@/lib/content";
 import "./globals.css";
@@ -99,11 +100,13 @@ export default function RootLayout({
         <a href="#main" className="ds-skip">
           Skip to content
         </a>
-        <SiteHeader />
-        <main id="main" className="flex-1">
-          {children}
-        </main>
-        <SiteFooter />
+        <KeyraSessionProvider>
+          <SiteHeader />
+          <main id="main" className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
+        </KeyraSessionProvider>
       </body>
     </html>
   );

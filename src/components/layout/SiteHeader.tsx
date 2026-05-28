@@ -6,9 +6,9 @@ import { KeyraAppLauncher } from "./KeyraAppLauncher";
 import { MobileNav } from "./MobileNav";
 import { KeyraLogo } from "@/components/brand/KeyraLogo";
 import { NAV_LINKS_PRIMARY } from "@/lib/content";
-import { keyraAiAotiUrl, keyraDeveloperPortalUrl, keyraGetStartedUrl } from "@/lib/keyraAppUrls";
+import { keyraDeveloperPortalUrl } from "@/lib/keyraAppUrls";
 import { NEW_TAB_LINK } from "@/lib/newTabLink";
-import { useKeyraSession } from "@/contexts/KeyraSessionContext";
+import { KeyraSessionControl } from "@/components/auth/KeyraSessionControl";
 
 type NavItem = { href: string; label: string; external?: boolean };
 
@@ -21,7 +21,6 @@ function buildNav(): NavItem[] {
 
 export function SiteHeader() {
   const nav = useMemo(() => buildNav(), []);
-  const { user, headerLabel, logout } = useKeyraSession();
 
   return (
     <header className="keyra-site-header-shell z-[var(--keyra-z-header)]">
@@ -76,33 +75,7 @@ export function SiteHeader() {
             className="hidden min-w-0 shrink-0 flex-row flex-nowrap items-stretch rounded-[var(--keyra-radius-pill)] border border-keyra-border bg-keyra-surface/90 p-0.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur-md sm:flex sm:p-1"
             aria-label="Platform access"
           >
-            {user ? (
-              <button
-                type="button"
-                className="flex items-center whitespace-nowrap rounded-[var(--keyra-radius-pill)] bg-[var(--keyra-action)] px-3 py-2 text-xs font-medium leading-none text-keyra-primary ring-1 ring-[var(--keyra-action-border)] transition-colors duration-150 ease-out hover:bg-[rgba(255,255,255,0.05)] sm:text-sm"
-                onClick={() => void logout()}
-                title={headerLabel ?? "Signed in"}
-              >
-                Sign out
-              </button>
-            ) : (
-              <button
-                type="button"
-                className="flex items-center whitespace-nowrap rounded-[var(--keyra-radius-pill)] bg-[var(--keyra-action)] px-3 py-2 text-xs font-medium leading-none text-keyra-primary ring-1 ring-[var(--keyra-action-border)] transition-colors duration-150 ease-out hover:bg-[rgba(255,255,255,0.05)] sm:text-sm"
-                onClick={() => {
-                  const returnUrl = `${keyraAiAotiUrl()}/?keyra_session=1`;
-                  const href = `${keyraGetStartedUrl()}/?return=${encodeURIComponent(returnUrl)}`;
-                  const popup = window.open(
-                    href,
-                    "keyra_get_started_login",
-                    "popup=yes,width=520,height=760,noopener",
-                  );
-                  if (!popup) window.location.href = href;
-                }}
-              >
-                Sign in
-              </button>
-            )}
+            <KeyraSessionControl className="flex items-center whitespace-nowrap rounded-[var(--keyra-radius-pill)] bg-[var(--keyra-action)] px-3 py-2 text-xs font-medium leading-none text-keyra-primary ring-1 ring-[var(--keyra-action-border)] transition-colors duration-150 ease-out hover:bg-[rgba(255,255,255,0.05)] sm:text-sm" />
           </div>
         </div>
       </div>
